@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isha Singh | Electronics Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#internships">Internships & Certifications</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi! I'm <span>Isha Singh</span></h1>
+      <p>B.Tech student in Electronics & Telecommunication | PCCoE, Pune</p>
+      <div class="buttons">
+        <button class="btn primary" id="contactBtn">Contact Me</button>
+        <a href="https://www.linkedin.com/in/isha-singh-44791934b/" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/I2095/isha" target="_blank" class="btn">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://i.ibb.co/20bxyc8c/your-image.png" alt="Isha Singh" />
+    </div>
+  </header>
+
+  <!-- Contact Popup -->
+  <div id="contactPopup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h3>Let's Innovate! 💡</h3>
+      <p>You can reach me at:</p>
+      <a href="mailto:isha.singh23@pccoepune.org">isha.singh23@pccoepune.org</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about fade-in">
+    <div class="circuit-bg"></div>
+    <h2>About Me</h2>
+    <p>
+      I am pursuing a Bachelor of Technology in Electronics and Telecommunication Engineering at PCCoE, Pune. 
+      I am driven by a deep fascination with the world of semiconductors and its pivotal role in modern technology, particularly captivated by VLSI (Very Large-Scale Integration) and the entire process of chip creation. 
+      My interest spans from the intricacies of semiconductor fabrication to the critical steps of packaging the finished integrated circuit. 
+      What truly excites me is the challenge of chip designing, translating complex concepts into functional, physical layouts. 
+      Furthermore, I am eager to pioneer the integration of generative AI into the field of electronics, utilizing its power to revolutionize and optimize VLSI design methodologies and accelerate innovation in the next generation of silicon technology.
+    </p>
+  </section>
+
+  <section id="internships" class="internships fade-in">
+    <h2>Internships & Certifications</h2>
+    <div class="cards">
+      <!-- Your cards stay the same -->
+      <div class="card"><h3>VLSI Internship</h3><p>Applied core principles of the VLSI design flow, gaining hands-on experience in digital logic design, synthesis, and optimization. Developed proficiency in industry-standard EDA tools to translate abstract concepts into functional silicon architectures.</p></div>
+      <div class="card"><h3>AI/ML Internship</h3><p>Focused on practical application of AI/ML, encompassing data preprocessing, model training, and performance evaluation. Built foundational skills in developing predictive models, broadening my expertise in computational problem-solving.</p></div>
+      <div class="card"><h3>Robotics Internship </h3><p>Explored the integration of hardware and software, working with sensors, actuators, and control systems. Contributed to projects involving kinematic modeling and task-based programming, providing hands-on experience in building autonomous systems.</p></div>
+      <div class="card"><h3>LLMs and Generative AI Workshop</h3><p>Mastered the fundamentals of advanced generative models, including Large Language Models (LLMs). Explored cutting-edge applications and prompt engineering, which is now fueling my interest in applying Generative AI to revolutionize VLSI design.</p></div>
+      <div class="card"><h3>NPTEL Certification (Data Science)</h3><p>Completed a rigorous program, solidifying expertise in statistical analysis, data visualization, and machine learning techniques. This certification provides a strong analytical foundation for technical projects.</p></div>
+      <div class="card"><h3>5G Communication</h3><p>Explored the core architectural advancements and deployment strategies of next-generation 5G networks. Gained insight into enabling technologies like massive MIMO and their impact on future wireless communication.</p></div>
+      <div class="card"><h3>Semiconductor Fabrication  </h3><p>Attended a specialized program to understand the critical process steps and manufacturing science behind IC fabrication. This provided a high-level, academic perspective on the journey from raw material to finished chip.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Isha Singh | Designed with 💙 Electronics Passion</p>
+  </footer>
+
+  <script>
+    // Fade out image on scroll
+    const heroImage = document.querySelector('.hero-image img');
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      heroImage.style.opacity = 1 - scrollY / 400;
+    });
+
+   // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    
+    // Popup logic
+    const popup = document.getElementById("contactPopup");
+    const btn = document.getElementById("contactBtn");
+    const close = document.querySelector(".close");
+    btn.onclick = () => popup.style.display = "flex";
+    close.onclick = () => popup.style.display = "none";
+    window.onclick = (e) => { if (e.target == popup) popup.style.display = "none"; };
+  </script>
+</body>
+</html>

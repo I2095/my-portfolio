@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top left, #0a0a0a, #040b1a, #0b1229, #101b3f);
+  overflow-x: hidden;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 10%;
+  min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-content {
+  flex: 1;
+  animation: fadeIn 1s ease-in;
+}
+
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: 7rem;  /* Increase the font size to 5rem (you can adjust this value as needed) */
+  font-weight: 700;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(90deg, #3abefb, #5f7aff, #b06cf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.hero-content p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #d0d0d0;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #3abefb;
+  border-radius: 30px;
+  color: #3abefb;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #3abefb;
+  color: #0a0a0a;
+}
+
+.btn.primary {
+  background: #3abefb;
+  color: #0a0a0a;
+}
+
+.btn.primary:hover {
+  background: transparent;
+  color: #3abefb;
+}
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+.hero-image img {
+  width: 80%;
+  max-width: 400px;
+  transition: opacity 0.4s ease;
+}
+
+/* ===== CONTACT POPUP ===== */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #081f44;
+  border: 1px solid #3abefb;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(58, 190, 251, 0.4);
+  animation: fadeIn 0.5s ease;
+}
+
+.popup-content a {
+  color: #66d1ff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.popup-content a:hover {
+  text-decoration: underline;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  position: relative;
+  padding: 5rem 10%;
+  background: linear-gradient(180deg, #041225, #061e3c, #082b52); /* Blue gradient background */
+  overflow: hidden;
+}
+
+
+/* Circuit background effect */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(58, 190, 251, 0.1) 0px,
+    rgba(58, 190, 251, 0.1) 1px,
+    transparent 1px,
+    transparent 4px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    rgba(155, 89, 182, 0.1) 0px,
+    rgba(155, 89, 182, 0.1) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  z-index: -1; /* Place behind the content */
+  pointer-events: none; /* Allow interaction with elements above */
+  animation: moveLines 20s linear infinite; /* Optional: Animate lines for a moving effect */
+}
+
+/* Chip-like squares for a more techy look */
+.about::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: rgba(58, 190, 251, 0.4);
+  box-shadow: 
+    0 0 5px rgba(58, 190, 251, 0.6), 
+    0 0 10px rgba(58, 190, 251, 0.8), 
+    0 0 15px rgba(58, 190, 251, 1);
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #9b59b6, #3abefb); /* Lighter purple and blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #e8f4ff; /* Light text color */
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@keyframes moveLines {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+/* ===== INTERNSHIPS SECTION (Updated) ===== */
+.internships {
+  padding: 5rem 10%;
+  text-align: center;
+  background: linear-gradient(180deg, #041225, #061e3c, #082b52);
+}
+
+.internships h2 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #3abefb, #5f7aff, #b06cf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(10, 25, 50, 0.5);
+  border: 1px solid rgba(90, 170, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 300px;
+  color: #e8f4ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0 0 15px rgba(58, 190, 251, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.card h3 {
+  color: #3abefb;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(90deg, #3abefb, #b06cf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #cfe7ff;
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05); /* Add scale for a 3D effect */
+  box-shadow: 0 0 25px rgba(58, 190, 251, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* ===== NAVBAR STYLES ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 25, 50, 0.7);
+  padding: 1rem 5%;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 2rem;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #3abefb;
+}
+
+/* Ensuring spacing between content and navbar */
+body {
+  padding-top: 4rem;
+}
+.navbar ul li a.active {
+  color: #3abefb; /* Change active link color to blue */
+}
+.navbar ul li a {
+  transition: color 0.3s ease; /* Smooth transition for the active link color */
+}
