@@ -1,4 +1,3 @@
 # Personal website
 
-A Pen created on CodePen.
-
+Welcome to my personal website! 
