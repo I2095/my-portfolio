@@ -322,3 +322,19 @@ body {
 .navbar ul li a {
   transition: color 0.3s ease; /* Smooth transition for the active link color */
 }
+/* ===== PROJECTS SECTION ===== */
+.projects {
+  padding: 5rem 10%;
+  text-align: center;
+  background: linear-gradient(180deg, #041225, #061e3c, #082b52);
+}
+
+.projects h2 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #3abefb, #5f7aff, #b06cf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
